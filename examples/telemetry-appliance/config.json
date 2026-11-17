@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "design_id": "hardware-box-telemetry-appliance",
+  "status": "conceptual_reference_design_not_build_ready",
+  "power": {
+    "source": "certified_external_low_voltage_dc_adapter",
+    "direct_mains_on_prototype_pcb": false,
+    "rails": ["5V", "3V3"],
+    "current_budget": null,
+    "fuse_rating": null,
+    "note": "Ratings must be calculated from final selected parts and measured load."
+  },
+  "compute": {
+    "controller": "industrial MCU or SBC to be selected",
+    "secure_element": "required for device identity",
+    "rtc": "required for timestamp continuity",
+    "watchdog": true,
+    "encrypted_local_buffer": true,
+    "signed_firmware_updates": true
+  },
+  "interfaces": [
+    {"connector":"J1","type":"DC input","purpose":"certified adapter low-voltage input"},
+    {"connector":"J2","type":"I2C/SPI","purpose":"temperature, humidity, vibration sensors"},
+    {"connector":"J3","type":"protected digital input","purpose":"fan tachometer or pulse sensor"},
+    {"connector":"J4","type":"dry contact","purpose":"leak or door state"},
+    {"connector":"J5","type":"isolated field interface","purpose":"external sensor wiring"},
+    {"connector":"J6","type":"Ethernet","purpose":"outbound TLS telemetry"},
+    {"connector":"J7","type":"service USB","purpose":"physical maintenance"}
+  ],
+  "remote_actuation": false,
+  "network_policy": "outbound_only_by_default",
+  "not_yet_specified": [
+    "part numbers",
+    "voltage/current limits",
+    "fuse rating",
+    "PCB stack-up",
+    "trace widths",
+    "creepage/clearance",
+    "thermal budget",
+    "EMC and regulatory approvals"
+  ],
+  "review_gate": "Independent electrical engineering review and bench validation required before fabrication or deployment."
+}
