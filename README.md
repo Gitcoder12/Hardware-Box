@@ -146,3 +146,22 @@ This section supplements the maintainer-authored README above. The original text
 - Mark unverified sources, identifiers, metrics, benchmark results and external claims as unknown/unverified rather than guessing.
 - Verify setup, execution, tests and public claims against the exact current commit before using this repository in a job, research or academic application.
 - See [MODEL_AUDIT_ROUTER.md](MODEL_AUDIT_ROUTER.md) for independent model review instructions and the merge gate.
+
+---
+
+## Engineering Audit & Handover — 2026-11-17
+
+**Reviewed commit:** `07396c7a63c9a91fa85bc87e60266e9e82bd5aa3` (`main`). Static inspection covered validation, registry, project bundles, CLI, and representative tests; tests were not executed.
+
+### Confirmed findings
+- The project has a substantial Python package, SQLite-backed device/component registries, strict device-record validation, CAD/EDA/tolerance utilities, CLI, Streamlit entry point, and a broad test suite.
+- Project bundles include a manifest with SHA-256 hashes; verification rejects duplicate paths, unsafe archive paths, and symlink entries. The visible tests cover round-trip integrity, tampering, path traversal, and refusing to overwrite existing files by default.
+- The CLI exposes an explicit `delete` command for a device record with a `--yes` confirmation flag. This is record-level deletion, not repository deletion; preserve the confirmation guard and document backup expectations.
+- Static inspection does not establish that all CAD/EDA formats, external tool integrations, or engineering calculations are production-certified.
+
+### Next actions
+1. Run the complete test suite and both GitHub Actions workflows; capture exact results and environment.
+2. Expand real-world sample validation for KiCad/CAD exports, malformed archives, large bundles, and cross-platform paths.
+3. Keep all engineering outputs advisory unless validated against authoritative specifications and qualified tools; retain provenance and units for every imported measurement.
+
+**Verification status:** static source/test inspection only; no tests, CAD/EDA toolchain run, or hardware validation was performed.
