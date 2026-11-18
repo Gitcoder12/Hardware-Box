@@ -165,3 +165,10 @@ This section supplements the maintainer-authored README above. The original text
 3. Keep all engineering outputs advisory unless validated against authoritative specifications and qualified tools; retain provenance and units for every imported measurement.
 
 **Verification status:** static source/test inspection only; no tests, CAD/EDA toolchain run, or hardware validation was performed.
+
+---
+
+## Examples Used
+- Comparing laptop replacement components by compatibility
+- Documenting a PCB layout and its bill of materials
+- Preparing an authorized enclosure design for 3D printing
