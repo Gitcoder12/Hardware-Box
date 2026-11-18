@@ -165,3 +165,24 @@ This section supplements the maintainer-authored README above. The original text
 3. Keep all engineering outputs advisory unless validated against authoritative specifications and qualified tools; retain provenance and units for every imported measurement.
 
 **Verification status:** static source/test inspection only; no tests, CAD/EDA toolchain run, or hardware validation was performed.
+
+
+---
+
+## Branch Activity & Development History
+
+**Audit date:** 2026-11-18 · **Comparison base:** `main`
+
+| Branch | Difference from `main` | Observed work / changed paths |
+|---|---:|---|
+| `deep-dive-sprint` | 30 ahead / 11 behind | Engineering deep dive, BOM/CAD mesh/tolerance changes, CLI updates and extensive edge-case/KiCad/statistical tests |
+| `docs/portfolio-operating-kit-2026-11-13` | 0 / 5 | No unique commits relative to current `main`; branch is behind |
+| `docs/project-status-2026-11-16-hardware-box` | 1 / 2 | Project status snapshot: `PROJECT_STATUS.md` |
+| `feat/box-circuit-blueprints` | 2 / 1 | Telemetry appliance reference documentation and example configuration |
+
+### Open pull requests observed during this audit
+
+- [PR #4 — project status snapshot](https://github.com/Gitcoder12/Hardware-Box/pull/4)
+- [PR #3 — deep dive sprint](https://github.com/Gitcoder12/Hardware-Box/pull/3)
+
+**Review note:** The deep-dive branch changes CAD, BOM and tolerance code with additional tests. Inspect generated artifacts and run the full hardware validation suite before merging. No branches have been merged or deleted by this documentation update.
