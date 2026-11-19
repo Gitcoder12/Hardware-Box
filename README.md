@@ -172,3 +172,27 @@ This section supplements the maintainer-authored README above. The original text
 - Comparing laptop replacement components by compatibility
 - Documenting a PCB layout and its bill of materials
 - Preparing an authorized enclosure design for 3D printing
+
+
+---
+
+## Comparison with Existing Open-Source Projects
+
+Hardware-Box is described as a planned catalogue and workflow for hardware configurations, PCB documentation, CAD models, component compatibility and authorized replication. The following projects are established design/manufacturing tools that cover parts of this intended ecosystem.
+
+| Project | Established focus | Relationship to Hardware-Box |
+|---|---|---|
+| [KiCad](https://github.com/KiCad/kicad-source-mirror) | Electronic design automation for schematics and PCB layouts | A mature PCB design environment; Hardware-Box aims to organize and connect design artefacts and configuration metadata across devices. |
+| [FreeCAD](https://github.com/FreeCAD/FreeCAD) | Parametric 3D CAD and engineering design | A full CAD application; Hardware-Box's intended role is catalogue, compatibility and workflow coordination rather than replacing CAD authoring. |
+| [OpenSCAD](https://github.com/openscad/openscad) | Programmatic solid 3D modelling | A focused reproducible CAD tool; Hardware-Box could index or connect authorized design files and fabrication metadata. |
+
+### Where Hardware-Box is different
+- **Cross-format hardware catalogue:** the concept combines device configurations, PCB files, components, firmware documentation and mechanical models.
+- **Compatibility and provenance:** the stated goal includes comparing components and documenting authorized reference designs.
+- **Replication workflow:** the vision connects documentation to suitable manufacturing processes, while acknowledging that many electronic components cannot be 3D-printed.
+
+### Where established projects are stronger
+KiCad, FreeCAD and OpenSCAD are mature authoring tools with established formats and user communities. The current Hardware-Box README labels the project as early architecture/planning; it does not demonstrate a populated catalogue, universal schema, CAD validation or replication pipeline.
+
+### Evidence, licensing and safety requirements
+Every design must include source, licence, revision, device model, provenance and authorization status. Validate dimensions, tolerances, material properties and electrical constraints before fabrication. Do not imply that arbitrary commercial hardware can be legally or safely cloned. This is a concept comparison, not a CAD capability or manufacturing-readiness assessment.
