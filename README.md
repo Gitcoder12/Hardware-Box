@@ -80,6 +80,49 @@ Hardware-Box/
 ├── examples/
 └── tests/
 
+## Run locally
+
+Hardware-Box currently provides a Python CLI and an optional local REST API. The future web-interface roadmap is not a browser dashboard that can be opened today.
+
+### Install the CLI
+
+```bash
+git clone https://github.com/Gitcoder12/Hardware-Box.git
+cd Hardware-Box
+python -m venv .venv
+```
+
+Activate the environment:
+
+```powershell
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+```
+
+```bash
+# macOS / Linux
+source .venv/bin/activate
+```
+
+Install and inspect the CLI:
+
+```bash
+python -m pip install --upgrade pip
+pip install -e .
+hardware-box --help
+```
+
+### Open the optional API documentation in your browser
+
+```bash
+pip install -e ".[api]"
+uvicorn hardware_box.api:app --reload
+```
+
+Open **http://127.0.0.1:8000/docs** for interactive API documentation or **http://127.0.0.1:8000/health** for the health endpoint. Keep the terminal running; press **Ctrl+C** to stop the API.
+
+---
+
 Technology Direction
 
 - Python for automation and hardware processing
